@@ -92,7 +92,7 @@ var JOURNAL = [
 ];
 
 
-function tableFor(event, journal) {
+/* function tableFor(event, journal) {
   let table = [0, 0, 0, 0];
   for (let i = 0; i < journal.length; i++) {
     let entry = journal[i], index = 0;
@@ -124,4 +124,19 @@ function journalEvents(journal) {
 }
 
 
-console.log(journalEvents(JOURNAL));
+console.log(journalEvents(JOURNAL));*/
+function contarEventos(journal) {
+
+  for (let entrada of journal) {
+    for (let evento of entrada.events) {
+      if (contagem[evento] === undefined) {
+      } else {
+        contagem["linhas"] = contagem["linhas"] + 1
+      }
+    }
+  }
+
+  return contagem;
+}
+
+console.log(contarEventos(JOURNAL));
